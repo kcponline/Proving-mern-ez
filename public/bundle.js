@@ -19821,86 +19821,89 @@
 
 		// Here we render the function
 		render: function render() {
-
 			return React.createElement(
 				'div',
-				{ className: 'container' },
+				{ classname: 'row' },
 				React.createElement(
 					'div',
-					{ className: 'row' },
+					{ className: 'col-md-12' },
 					React.createElement(
 						'div',
 						{ className: 'jumbotron' },
 						React.createElement(
-							'h2',
-							null,
-							'All my children: A Tale of Reactive Components'
-						),
-						React.createElement('hr', null),
-						React.createElement(
-							'p',
-							null,
-							React.createElement(
-								'em',
-								null,
-								'Now backed by the power of MongoDB!'
-							),
-							' Just visit ',
-							React.createElement(
-								'a',
-								{ href: '/api' },
-								'/api'
-							),
-							' to check out the DB!'
-						),
-						React.createElement(
-							'p',
-							null,
-							React.createElement(
-								'a',
-								{ className: 'btn btn-primary btn-lg', type: 'button', onClick: this.handleClick },
-								'CLICK ME!!!!'
-							),
-							React.createElement(
-								'span',
-								null,
-								' '
-							),
-							React.createElement(
-								'a',
-								{ className: 'btn btn-danger btn-lg', type: 'button', onClick: this.resetClick },
-								'Reset'
-							)
-						)
-					),
-					React.createElement(
-						'div',
-						{ className: 'col-md-12' },
-						React.createElement(
 							'div',
-							{ className: 'panel panel-default' },
+							{ className: 'container' },
 							React.createElement(
-								'div',
-								{ className: 'panel-heading' },
+								'h2',
+								null,
+								'All my children: A Tale of Reactive Components'
+							),
+							React.createElement('hr', null),
+							React.createElement(
+								'p',
+								null,
 								React.createElement(
-									'h3',
-									{ className: 'panel-title text-center' },
-									'Parent'
-								)
+									'em',
+									null,
+									'Now backed by the power of MongoDB!'
+								),
+								' Just visit ',
+								React.createElement(
+									'a',
+									{ href: '/api' },
+									'/api'
+								),
+								' to check out the DB!'
 							),
 							React.createElement(
-								'div',
-								{ className: 'panel-body text-center' },
+								'p',
+								null,
 								React.createElement(
-									'h1',
-									null,
-									this.state.clicks
+									'a',
+									{ className: 'btn btn-primary btn-lg', type: 'button', onClick: this.handleClick },
+									'CLICK ME!!!!'
 								),
-								React.createElement(Child, { clicks: this.state.clicks })
+								React.createElement(
+									'span',
+									null,
+									' '
+								),
+								React.createElement(
+									'a',
+									{ className: 'btn btn-danger btn-lg', type: 'button', onClick: this.resetClick },
+									'Reset'
+								)
 							)
 						)
 					)
-				)
+				),
+				React.createElement(
+					'div',
+					{ className: 'col-md-6' },
+					React.createElement(
+						'div',
+						{ className: 'panel panel-default' },
+						React.createElement(
+							'div',
+							{ className: 'panel-heading' },
+							React.createElement(
+								'h3',
+								{ className: 'panel-title text-center' },
+								'Parent'
+							)
+						),
+						React.createElement(
+							'div',
+							{ className: 'panel-body text-center' },
+							React.createElement(
+								'h1',
+								null,
+								this.state.clicks
+							)
+						)
+					)
+				),
+				React.createElement(Child, { clicks: this.state.clicks })
 			);
 		}
 	});
@@ -19933,28 +19936,35 @@
 		},
 
 		render: function render() {
-
 			return React.createElement(
 				'div',
-				{ className: 'panel panel-default' },
+				{ classname: 'row' },
 				React.createElement(
 					'div',
-					{ className: 'panel-heading' },
+					{ className: 'col-md-6' },
 					React.createElement(
-						'h3',
-						{ className: 'panel-title' },
-						'Child'
+						'div',
+						{ className: 'panel panel-default' },
+						React.createElement(
+							'div',
+							{ className: 'panel-heading' },
+							React.createElement(
+								'h3',
+								{ className: 'panel-title text-center' },
+								'Child'
+							)
+						),
+						React.createElement(
+							'div',
+							{ className: 'panel-body text-center' },
+							React.createElement(
+								'h1',
+								null,
+								this.state.number + 2 * this.props.clicks
+							),
+							React.createElement(GrandChild, { number: this.state.number + 2 * this.props.clicks })
+						)
 					)
-				),
-				React.createElement(
-					'div',
-					{ className: 'panel-body text-center' },
-					React.createElement(
-						'h1',
-						null,
-						this.state.number + 2 * this.props.clicks
-					),
-					React.createElement(GrandChild, { number: this.state.number + 2 * this.props.clicks })
 				)
 			);
 		}
@@ -19988,23 +19998,57 @@
 
 			return React.createElement(
 				"div",
-				{ className: "panel panel-default" },
+				{ classname: "row" },
 				React.createElement(
 					"div",
-					{ className: "panel-heading" },
+					{ className: "col-md-6" },
 					React.createElement(
-						"h3",
-						{ className: "panel-title" },
-						"GrandChild"
+						"div",
+						{ className: "panel panel-default" },
+						React.createElement(
+							"div",
+							{ className: "panel-heading" },
+							React.createElement(
+								"h3",
+								{ className: "panel-title" },
+								"GrandChild"
+							)
+						),
+						React.createElement(
+							"div",
+							{ className: "panel-body text-center" },
+							React.createElement(
+								"h1",
+								null,
+								this.state.number + 4 * this.props.number
+							)
+						)
 					)
 				),
 				React.createElement(
 					"div",
-					{ className: "panel-body text-center" },
+					{ className: "col-md-6" },
 					React.createElement(
-						"h1",
-						null,
-						this.state.number + 4 * this.props.number
+						"div",
+						{ className: "panel panel-default" },
+						React.createElement(
+							"div",
+							{ className: "panel-heading" },
+							React.createElement(
+								"h3",
+								{ className: "panel-title" },
+								"GrandChild"
+							)
+						),
+						React.createElement(
+							"div",
+							{ className: "panel-body text-center" },
+							React.createElement(
+								"h1",
+								null,
+								this.state.number + 4 * this.props.number
+							)
+						)
 					)
 				)
 			);

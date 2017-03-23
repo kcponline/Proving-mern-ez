@@ -14,19 +14,32 @@ var GrandChild = React.createClass({
 	render: function(){
 
 		return(
-
-			<div className="panel panel-default">
-				<div className="panel-heading">
-					<h3 className="panel-title">GrandChild</h3>
+				<div classname="row">
+					<div className="col-md-6">
+						<div className="panel panel-default">
+							<div className="panel-heading">
+								<h3 className="panel-title">GrandChild</h3>
+							</div>
+							<div className="panel-body text-center">
+								{/* Grandchild will use it's own parents number ("child") with its own state.
+								*/}
+								<h1>{this.state.number + 4*this.props.number}</h1>
+							</div>
+						</div>
+					</div>
+					<div className="col-md-6">
+						<div className="panel panel-default">
+							<div className="panel-heading">
+								<h3 className="panel-title">GrandChild</h3>
+							</div>
+							<div className="panel-body text-center">
+								{/* Grandchild will use it's own parents number ("child") with its own state.
+								*/}
+								<h1>{this.state.number + 4*this.props.number}</h1>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div className="panel-body text-center">
-
-					{/* Grandchild will use it's own parents number ("child") with its own state.
-					*/}
-					<h1>{this.state.number + 4*this.props.number}</h1>
-
-				</div>
-			</div>
 		)
 	}
 });
